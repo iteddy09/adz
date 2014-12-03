@@ -1,4 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,800,300);*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,800,300);
 
 
 body{
@@ -172,7 +172,7 @@ button{
 
 
 
-#container #product img#big-image{
+#container #product img#big-image,#user img{
 	max-height: 500px;
 	cursor:zoom-in;
 	-webkit-cursor:zoom-in;
@@ -347,7 +347,7 @@ ul.peopleList li{
 	margin-top:50px;
 }
 .tab-content input{
-	margin:2px 0;
+	margin:1px 0;
 }
 
 .color{
@@ -408,4 +408,11 @@ ul.peopleList li{
  
 #shoppingBagIcon{
 	cursor:pointer;
+}
+#bottom #likes,#bottom #pins, #bottom #purchased, #bottom .count{
+	cursor:pointer;
+}
+
+#myFavoriteBrands div{
+	cursor: move;
 }

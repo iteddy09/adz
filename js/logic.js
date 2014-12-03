@@ -1,7 +1,9 @@
 $(function(){
 	loadProducts();
+	loadBrands();
+	loadMyFavoriteBrands();
 	selectProduct($("#img-thumbnails img").first());
 
-	$( ".brands" ).sortable();
-	$( ".brands" ).disableSelection();
+	$( "#myFavoriteBrands" ).sortable();
+	$( "#myFavoriteBrands" ).disableSelection();
 })

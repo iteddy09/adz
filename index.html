@@ -151,7 +151,7 @@
 				<span id='pins'></span>
 			</div>
 			<div class="item" style='padding-top: 16px;'>
-				<div id="shoppingBagIcon" style='display:inline-block'><img src="img/shopping-bag.png" alt="" style='border-radius:0'></div> 
+				<div id="shoppingBagIcon" style='display:inline-block' title='Buy Product'><img src="img/shopping-bag.png" alt="" style='border-radius:0' ></div> 
 				<div class='count'>4</div> <br>
 				<span id='purchased'></span>
 			</div>
@@ -168,9 +168,10 @@
 		<div class="tab" id='sizesTab'><i class="fa fa-child"></i> Sizes</div>
 		<div class="tab" id='styleTab'><i class="fa fa-thumbs-o-up"></i> Style</div>
 
-		<div class="tab-content" id='my-sizes-content' style='display:none'>
+		<div class="tab-content" id='my-sizes-content' style='display:none;overflow-y:scroll;height:500px'>
 			<img src="img/sizes.jpg" height="519" width="209" alt="" style='float:left;margin-left:178px'>
 			<div style='float:left;width:300px;' align='right'>
+				<div><label for="00">0</label> <input type="text" size='3' id="00"></div>
 				<div><label for="01">1</label> <input type="text" size='3' id="01"></div>
 				<div><label for="02">2</label> <input type="text" size='3' id="02"></div>
 				<div><label for="03">3</label> <input type="text" size='3' id="03"></div>
@@ -186,6 +187,103 @@
 				<div><label for="13">13</label> <input type="text" size='3' id="13"></div>
 				<div><label for="14">14</label> <input type="text" size='3' id="14"></div>
 				<div><label for="15">15</label> <input type="text" size='3' id="15"></div>
+
+
+			</div>
+
+			<div id="moreDetails">
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/1.jpg" alt="sizes img">
+					<br>
+					<label for="explicit1">1</label>
+					<input type="text" id="explicit1"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/2.jpg" alt="sizes img">
+					<br>
+					<label for="explicit2">2</label>
+					<input type="text" id="explicit2"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/3.jpg" alt="sizes img">
+					<br>
+					<label for="explicit3">3</label>
+					<input type="text" id="explicit3"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/4.jpg" alt="sizes img">
+					<br>
+					<label for="explicit4">4</label>
+					<input type="text" id="explicit4"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/5.jpg" alt="sizes img">
+					<br>
+					<label for="explicit5">5</label>
+					<input type="text" id="explicit5"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/6.jpg" alt="sizes img">
+					<br>
+					<label for="explicit6">6</label>
+					<input type="text" id="explicit6"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/7.jpg" alt="sizes img">
+					<br>
+					<label for="explicit7">7</label>
+					<input type="text" id="explicit7"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/8.jpg" alt="sizes img">
+					<br>
+					<label for="explicit8">8</label>
+					<input type="text" id="explicit8"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/9.jpg" alt="sizes img">
+					<br>
+					<label for="explicit9">9</label>
+					<input type="text" id="explicit9"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/10.jpg" alt="sizes img">
+					<br>
+					<label for="explicit10">10</label>
+					<input type="text" id="explicit10"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/11.jpg" alt="sizes img">
+					<br>
+					<label for="explicit11">11</label>
+					<input type="text" id="explicit11"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/12.jpg" alt="sizes img">
+					<br>
+					<label for="explicit12">12</label>
+					<input type="text" id="explicit12"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/13.jpg" alt="sizes img">
+					<br>
+					<label for="explicit13">13</label>
+					<input type="text" id="explicit13"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/14.jpg" alt="sizes img">
+					<br>
+					<label for="explicit14">14</label>
+					<input type="text" id="explicit14"> cm
+				</div>
+				<div class="sizeInfo">
+					<img src="img/sizes_vid_thumbnails/15.jpg" alt="sizes img">
+					<br>
+					<label for="explicit15">15</label>
+					<input type="text" id="explicit15"> cm
+				</div>
+
+
 			</div>
 		</div>
 		<div class="tab-content" id='my-style-content' style='display:block;margin-top:60px;'>
@@ -201,7 +299,7 @@
 					<b>Straight </b><br/><br><br>
 					<img src="img/2.png" alt="" >
 				</label> <br>
-				<input type="radio" name="style" id="style2" value="2" >
+				<input type="radio" name="style" id="style2" value="2" checked>
 			</div>
 			<div style='float:left;width:33%'>
 				<label for="style3">
@@ -215,31 +313,16 @@
 		<div class="tab-content" id='my-favorites-content' style='display:none'>
 			<div style='float:left;width:420px'>Brands
 
-				<div class='brands'>
-					<div class="brand">Berska</div>
-					<div class="brand">Berska</div>
-					<div class="brand">Berska</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
-					<div class="brand">Pull&Bear</div>
+				<div id='allBrands' class='brands'>
+					<!-- <div class="brand">No Brand</div> -->
+				 
 				</div>
 			</div>
 			<div style='float:left;width:420px'>Favorite brands 
 
-				<div class='brands'>
-					<div class="brand">Berska</div>
-					<div class="brand">Berska</div>
-
-					<div class="brand">Pull&Bear</div>
+				<div id='myFavoriteBrands' class='brands'>
+					<!-- <div class="brand">Berska</div> -->
+					 
 				</div>
 			</div>
 
@@ -305,7 +388,7 @@
 	<script type='text/javascript' src="js/jQuery.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script type='text/javascript' src="js/jquery.tipsy.js"></script>
-	<script type='text/javascript' src="js/products.js"></script>
+	<script type='text/javascript' src="js/data.js"></script>
 	<script type='text/javascript' src="js/functions.js"></script>
 	<script type='text/javascript' src="js/select_product.js"></script>
 	<script type='text/javascript' src="js/logic.js"></script>

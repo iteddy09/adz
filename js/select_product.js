@@ -29,7 +29,7 @@ function selectProduct(img){
 	pinsEl.html(product.pins);
 	nameEl.html(product.name);
 	likesEl.html(product.likes);
-	brandEl.html(product.brand);
+	brandEl.html(product.brand.name);
 	purchasedEl.html(product.purchased);
 	materialEl.html(product.material);
 }

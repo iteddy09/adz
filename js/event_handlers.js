@@ -131,11 +131,16 @@ $(function(){
 		$("#listOfPeople").hide();
 	});
 
-	$("#container #img-thumbnails,#listOfPeople,#listOfPeopleBg").on(mousewheelevt,function(e){
+	$("#container #img-thumbnails,#listOfPeople,#listOfPeopleBg,#my-sizes-content").on(mousewheelevt,function(e){
 		e.stopPropagation();
 	});
 
+	$("#bottom #likes,#bottom #pins, #bottom #purchased, #bottom .count").click(function(){
 
+		$("#listOfPeople").show();
+		$("#listOfPeopleBg").show();
+
+	})
 
 
 })

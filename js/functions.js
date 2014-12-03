@@ -15,8 +15,29 @@ function loadProducts(){
 	}
 }
 
+function loadBrands(){
+ 
+
+	brands.forEach(function(brand,key){
+		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
+		brand.appendTo("#allBrands")
+	});
+}
+
+function loadMyFavoriteBrands(){
+ 
+
+	me.favorite_brands.forEach(function(brand,key){
+		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
+		brand.appendTo("#myFavoriteBrands")
+	});
+}
+
 function getList(){
 	return "<div align='left'>Marius Oloeagnu <br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan</div>";
+}
+function getLongList(){
+	return "<div align='left'>Marius Oloeagnu <br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/> Ionut Gheorghe<br/> Gigiel Popescu<br/> Fane Ionescu<br/> Ilie Lucan<br/>click for more..</div>";
 }
 
 function hideAllTabs(){
@@ -31,3 +52,4 @@ function hideAllPages(){
 	$("#myAccountSettings").hide();
 
 }
+
