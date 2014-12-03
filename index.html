@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Alex Demo</title>
+	
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/tipsy.css">
+	
+
+</head>
+<body>
+	<div id='container'>
+		<div id="shopping-cart">
+			<i class="fa fa-shopping-cart"></i> <br>
+			4 articles
+		</div>
+
+		<div id='listOfPeople' style='display:none'>
+			<ul>
+				<li>Vali01 Ionut01</li>
+				<li>Vali02 Ionut02</li>
+				<li>Vali03 Ionut03</li>
+				<li>Vali04 Ionut04</li>
+				<li>Vali05 Ionut05</li>
+				<li>Vali06 Ionut06</li>
+				<li>Vali07 Ionut07</li>
+				<li>Vali08 Ionut08</li>
+				<li>Vali09 Ionut09</li>
+				<li>Vali10 Ionut10</li>
+				<li>Vali11 Ionut11</li>
+				<li>Vali12 Ionut12</li>
+				<li>Vali13 Ionut13</li>
+				<li>Vali14 Ionut14</li>
+				<li>Vali15 Ionut15</li>
+				<li>Vali16 Ionut16</li>
+				<li>Vali17 Ionut17</li>
+				<li>Vali18 Ionut18</li>
+				<li>Vali19 Ionut19</li>
+				<li>Vali20 Ionut20</li>
+				<li>Vali21 Ionut21</li>
+				<li>Vali22 Ionut22</li>
+				<li>Vali23 Ionut23</li>
+				<li>Vali24 Ionut24</li>
+				<li>Vali25 Ionut25</li>
+				<li>Vali26 Ionut26</li>
+				<li>Vali27 Ionut27</li>
+				<li>Vali28 Ionut28</li>
+				<li>Vali29 Ionut29</li>
+				<li>Vali30 Ionut30</li>
+				<li>Vali31 Ionut31</li>
+				<li>Vali32 Ionut32</li>
+				<li>Vali33 Ionut33</li>
+				<li>Vali34 Ionut34</li>
+				<li>Vali35 Ionut35</li>
+			</ul>
+		</div>
+		<div id='listOfPeopleBg' style='display:none'></div>
+
+		<nav id='nav-menu' style='float:left'>
+			<ul>
+				<li><i class="fa fa-search" id='searchButton' style='cursor:pointer;'></i> 
+					<div id='search-container' align='left'>
+						<div><input type="text" style='width:160px;margin-bottom:10px' placeholder='search product..'> </div> 
+						   <label><input type="checkbox" name="option[]" value="1" checked />all products</label> <br>
+						   <label><input type="checkbox" name="option[]" value="1" />from favorites</label> <br>
+							<label><input type="checkbox" name="option[]" value="1" />products with discount</label> <br>
+							
+							<label><input type="checkbox" name="option[]" value="2" />from all brands</label> <br>
+							<label><input type="checkbox" name="option[]" value="2" />only from brands:</label>
+							
+							<select name="" id="" style='width:160px;margin-bottom:15px;'multiple >
+								<option value="">Bershka</option>
+								<option value="">Pull&Bear</option>
+								<option value="">Colins</option>
+								<option value="">Armani</option>
+								<option value="">Stradivarius</option>
+							</select>
+					 <br>
+						<input type="checkbox" id='colors'>
+						<label for="colors">colors   </label>
+						<span class="color" style='background-color:#e74c3c'></span><span class="color" style='background-color:#333'></span><span class="color" style='background-color:#2ecc71'></span><span class="color" style='background-color:#fff;border:1px solid #ddd;width:14px;height:14px;'></span>
+
+					 
+
+					<div><input type="checkbox" id='price'> <label for="price">price <input type="text" size='1'> to <input type="text" size='1'> </label> </div>
+
+					<div align="left" style='margin-top:10px'><b style='font-size:15px;cursor:pointer' id='doTheSearch'><i class="fa fa-search"></i>  SEARCH</b> <span id="hide" style='margin-left:60px;'>Hide</span>
+					</div>
+				</div>
+
+			</li>
+			<li title='Recent News' id='recentNews'><i class="fa fa-globe" style='position:relative;left:10px'></i> <div class='count'>5</div></li>
+			<li title='People <br/>Interaction' id='people'><i class="fa fa-users" style='position:relative;left:11px;top:-1px'></i> <div class='count'>5</div></li>
+			<li title='My profile' id='myAccount'><i class="fa fa-user"></i> </li>
+			<li><i class="fa fa-chevron-down"></i>
+				<div id='moreList'>
+					<a href="#aboutus">About us</a>
+					<a href="#logout">Logout</a>
+				</div>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div id='product' style='float:left;display:block'>
+		<div id='top'>
+			<div id='brand'></div>  
+			<div id='price'></div> 
+		</div>
+
+		<div id="mid" style='overflow:hidden'>
+
+			<div id='left' style='float:left;width:240px;'>
+				<div id='user' style='display:block;margin-top:130px;'>
+					<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/v/t1.0-1/c27.0.160.160/p160x160/1013277_452272794893818_1300799417_n.jpg?oh=6333349ecaf3af8cf881693c83114cd7&oe=551DAC29&__gda__=1425883984_1fce4720f51fecc4ca0d391ec9b0716c" alt="" width="90" height="90"> <br>
+
+					<b id='userName'>Alexandru Stefan</b> <br> <span id="action"><i class="fa fa-thumb-tack"></i> pinned</span> this product. <br>
+					Look: <span id="look">3285</span>
+				</div>	
+				<div id="product-details" style='display:none'>
+					<div id='colors' style='margin-bottom:50px;margin-top:130px'>
+						<span style='font-weight:400'>Colors</span> <br> 
+						<span class="color" style='background-color:#e74c3c'></span><span class="color" style='background-color:#333'></span><span class="color" style='background-color:#2ecc71'></span><span class="color" style='background-color:#fff;border:1px solid #ddd;width:14px;height:14px;'></span>
+					</div>   
+					<div style='margin-bottom:50px;'> <span style='font-weight:400;'>Material</span><br>	 <span id='material'></span></div>  
+
+				<!-- <button><i class="fa fa-shopping-cart"></i>  &nbsp;purchase</button> -->
+				</div>
+			</div>
+
+			<img id='big-image' src="#" alt="" style='float:left' width='350' height='470'> 
+
+			<div id="zoom-container" >
+
+			</div>
+
+		</div> 
+
+		<div id='bottom'>
+			<div class="item">
+				<i class="fa fa-thumbs-o-up"></i>
+				<div class='count'>5</div> <br>
+				<span id='likes'></span>
+			</div>
+			<div class="item">
+				<i class="fa fa-thumb-tack rotate"></i> 
+				<div class='count'>4</div> <br>
+				<span id='pins'></span>
+			</div>
+			<div class="item" style='padding-top: 16px;'>
+				<div id="shoppingBagIcon" style='display:inline-block'><img src="img/shopping-bag.png" alt="" style='border-radius:0'></div> 
+				<div class='count'>4</div> <br>
+				<span id='purchased'></span>
+			</div>
+
+		</div>
+	</div>
+
+ 
+
+	<div id='myAccountSettings' style='display:none' class='page' align='center'>
+		<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> Pins</div>
+		<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> Favorites</div>
+		<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> Purchases</div>
+		<div class="tab" id='sizesTab'><i class="fa fa-child"></i> Sizes</div>
+		<div class="tab" id='styleTab'><i class="fa fa-thumbs-o-up"></i> Style</div>
+
+		<div class="tab-content" id='my-sizes-content' style='display:none'>
+			<img src="img/sizes.jpg" height="519" width="209" alt="" style='float:left;margin-left:178px'>
+			<div style='float:left;width:300px;' align='right'>
+				<div><label for="01">1</label> <input type="text" size='3' id="01"></div>
+				<div><label for="02">2</label> <input type="text" size='3' id="02"></div>
+				<div><label for="03">3</label> <input type="text" size='3' id="03"></div>
+				<div><label for="04">4</label> <input type="text" size='3' id="04"></div>
+				<div><label for="05">5</label> <input type="text" size='3' id="05"></div>
+				<div><label for="06">6</label> <input type="text" size='3' id="06"></div>
+				<div><label for="07">7</label> <input type="text" size='3' id="07"></div>
+				<div><label for="08">8</label> <input type="text" size='3' id="08"></div>
+				<div><label for="09">9</label> <input type="text" size='3' id="09"></div>
+				<div><label for="10">10</label> <input type="text" size='3' id="10"></div>
+				<div><label for="11">11</label> <input type="text" size='3' id="11"></div>
+				<div><label for="12">12</label> <input type="text" size='3' id="12"></div>
+				<div><label for="13">13</label> <input type="text" size='3' id="13"></div>
+				<div><label for="14">14</label> <input type="text" size='3' id="14"></div>
+				<div><label for="15">15</label> <input type="text" size='3' id="15"></div>
+			</div>
+		</div>
+		<div class="tab-content" id='my-style-content' style='display:block;margin-top:60px;'>
+			<div  style='float:left;width:33%'>
+				<label for="style1">
+					<b>Slim </b><br/><br><br>
+					<img src="img/1.png" alt="">
+				</label> <br>
+				<input type="radio" name="style" id="style1" value="1" >
+			</div>
+			<div style='float:left;width:33%'>
+				<label for="style2">
+					<b>Straight </b><br/><br><br>
+					<img src="img/2.png" alt="" >
+				</label> <br>
+				<input type="radio" name="style" id="style2" value="2" >
+			</div>
+			<div style='float:left;width:33%'>
+				<label for="style3">
+					<b>Relaxed </b><br/><br><br>
+					<img src="img/3.png" alt=""  >
+				</label> <br>
+				<input type="radio" name="style" id="style3" value="3" >
+			</div>
+		</div>
+
+		<div class="tab-content" id='my-favorites-content' style='display:none'>
+			<div style='float:left;width:420px'>Brands
+
+				<div class='brands'>
+					<div class="brand">Berska</div>
+					<div class="brand">Berska</div>
+					<div class="brand">Berska</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+					<div class="brand">Pull&Bear</div>
+				</div>
+			</div>
+			<div style='float:left;width:420px'>Favorite brands 
+
+				<div class='brands'>
+					<div class="brand">Berska</div>
+					<div class="brand">Berska</div>
+
+					<div class="brand">Pull&Bear</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div id='userProfile' style='display:none' class='page' align='center'>
+		<div class="tab"><i class="fa fa-thumb-tack"></i> Pins</div>
+		<div class="tab"><i class="fa fa-star"></i> Favorites</div>
+		<div class="tab"><i class="fa fa-tags"></i> Purchases</div>
+		<div class="tab"><i class="fa fa-thumbs-o-up"></i> Likes</div>
+	</div>
+
+ 
+
+	<div id='img-thumbnails' style='display:block'>
+	</div>
+	<div id="right-submenu" style='display:none'>
+		<div style='margin-top:300px'>
+			<b>SAVE</b>
+
+		</div>
+	</div>
+</div>
+<!-- <i class="fa fa-user"></i> <input type="text" placeholder="Search Person"> -->
+<!-- <input type="text" id='search' >
+
+<i class="fa fa-search-plus"></i>
+<i class="fa fa-gift"></i>
+<i class="fa fa-heart"></i>
+<i class="fa fa-history"></i>
+<i class="fa fa-tags"></i>
+<i class="fa fa-thumbs-up"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-openid"></i>
+
+<i class="fa fa-times"></i>
+<i class="fa fa-sliders"></i>
+<i class="fa fa-rss"></i>
+<i class="fa fa-male"></i>
+<i class="fa fa-female"></i>
+<i class="fa fa-child"></i>
+
+<br><br> -->
+<!-- 
+<span class="tab"><i class="fa fa-thumb-tack"></i> Pins</span>
+<span class="tab"><i class="fa fa-star"></i> Favorites</span>
+<span class="tab"><i class="fa fa-tags"></i> Purchases</span>
+<span class="tab"><i class="fa fa-child"></i> Sizes</span>
+<span class="tab"><i class="fa fa-thumbs-o-up"></i> Style</span>
+<span class="tab"><i class="fa fa-thumbs-o-up"></i> Likes</span>
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<button><i class="fa fa-gift"></i>  &nbsp;Make Gift</button> -->
+
+	<script type='text/javascript' src="js/jQuery.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script type='text/javascript' src="js/jquery.tipsy.js"></script>
+	<script type='text/javascript' src="js/products.js"></script>
+	<script type='text/javascript' src="js/functions.js"></script>
+	<script type='text/javascript' src="js/select_product.js"></script>
+	<script type='text/javascript' src="js/logic.js"></script>
+	<script type='text/javascript' src="js/event_handlers.js"></script>
+	<script type='text/javascript' src="js/tipsy.js"></script>
+</body>
+</html>
