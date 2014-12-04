@@ -26,9 +26,6 @@ function selectProduct(img){
 
 	if(notificationId!=undefined){
 		var notification = notifications[notificationId];
-
-		 
-
 		userNameEl.html(notification.person.name);
 		userImgEl.attr('src',notification.person.avatar);
 		userActionEl.html(notification.action.message);
