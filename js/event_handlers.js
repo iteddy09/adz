@@ -93,12 +93,12 @@ $(function(){
 			})
 	});
 
-	$('#img-thumbnails img').on('mouseenter',function(){
+	$('#img-thumbnails img').live('mouseenter',function(){
 		selectProduct($(this));	
 	})
 
 
-
+/*
 	$("#container #img-thumbnails").scroll(function(){
    // Get container scroll position
    var fromTop = $(this).scrollTop();
@@ -123,7 +123,7 @@ $(function(){
 		containerScroll.scrollTop(before-event.originalEvent.wheelDelta);
 	});
 
-
+*/
 
 
 	$("#listOfPeopleBg").click(function(){

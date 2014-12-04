@@ -7,7 +7,10 @@ var nameEl = $("#product #name");
 var brandEl = $("#product #brand");
 var purchasedEl = $("#product #purchased");
 var materialEl = $("#product #material");
-
+var userNameEl=$("#user #userName");
+var userActionEl=$("#user #action");
+var userImgEl=$("#user img");
+var userLookEl=$("#user #look");
 
 
 function removeOtherSelected(){
@@ -17,7 +20,20 @@ function removeOtherSelected(){
 function selectProduct(img){
 	removeOtherSelected();
 
+
 	var product = products[img.attr('product-id')];
+	var notificationId = img.attr('notification-id');
+
+	if(notificationId!=undefined){
+		var notification = notifications[notificationId];
+
+		 
+
+		userNameEl.html(notification.person.name);
+		userImgEl.attr('src',notification.person.avatar);
+		userActionEl.html(notification.action.message);
+		userLookEl.html(notification.person.look);
+	}
 	product.new = false;
 	img.removeClass('unread');
 	img.addClass('current');

@@ -13,16 +13,16 @@ var brands= [
 
 
 var products = [
-	{'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':true},
-	{'name':'Tricou','brand':brands[1], 'material': 'cotton' ,'price': 36.99, 'purchased':747, 'likes':45, 'pins':531 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/2619/823/800/2/w/560/2619823800_2_3_1.jpg?ts=1414595567612','new':true},
-	{'name':'Tricou ','brand':brands[0], 'material': 'wool' ,'price': 66.99, 'purchased':532, 'likes':21, 'pins':315 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/8366/935/401/2/w/560/8366935401_1_1_1.jpg?ts=1416597002592','new':false},
-	{'name':'Bluza','brand':brands[2], 'material': 'cotton' ,'price': 136.99, 'purchased':643, 'likes':426, 'pins':321 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/4043/269/802/2/w/560/4043269802_2_1_1.jpg?ts=1413534241511','new':false},
-	{'name':'Rochie ','brand':brands[5], 'material': 'synthetic' ,'price': 82.99, 'purchased':12, 'likes':4235, 'pins':373 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/0787/224/800/2/w/560/0787224800_2_1_1.jpg?ts=1415354801372','new':false},
-	{'name':'Tricou ','brand':brands[3], 'material': 'silk' ,'price': 336.99, 'purchased':754, 'likes':654, 'pins':125 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/5646/901/807/2/w/560/5646901807_2_1_1.jpg?ts=1415986197063','new':false},
-	{'name':'Bluza','brand':brands[2], 'material': 'cotton' ,'price': 136.99, 'purchased':643, 'likes':426, 'pins':321 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/4043/269/802/2/w/560/4043269802_2_1_1.jpg?ts=1413534241511','new':false},
-	{'name':'Rochie','brand':brands[2], 'material': 'silk' ,'price': 836.99, 'purchased':75, 'likes':484, 'pins':643 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/8159/862/800/2/w/560/8159862800_2_2_1.jpg?ts=1412359897726','new':false},
-	{'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':true},
-	{'name':'Tricou ','brand':brands[3], 'material': 'silk' ,'price': 336.99, 'purchased':754, 'likes':654, 'pins':125 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/5646/901/807/2/w/560/5646901807_2_1_1.jpg?ts=1415986197063'}
+	{'id':0,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':true},
+	{'id':1,'name':'Tricou','brand':brands[1], 'material': 'cotton' ,'price': 36.99, 'purchased':747, 'likes':45, 'pins':531 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/2619/823/800/2/w/560/2619823800_2_3_1.jpg?ts=1414595567612','new':true},
+	{'id':2,'name':'Tricou ','brand':brands[0], 'material': 'wool' ,'price': 66.99, 'purchased':532, 'likes':21, 'pins':315 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/8366/935/401/2/w/560/8366935401_1_1_1.jpg?ts=1416597002592','new':false},
+	{'id':3,'name':'Bluza','brand':brands[2], 'material': 'cotton' ,'price': 136.99, 'purchased':643, 'likes':426, 'pins':321 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/4043/269/802/2/w/560/4043269802_2_1_1.jpg?ts=1413534241511','new':false},
+	{'id':4,'name':'Rochie ','brand':brands[5], 'material': 'synthetic' ,'price': 82.99, 'purchased':12, 'likes':4235, 'pins':373 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/0787/224/800/2/w/560/0787224800_2_1_1.jpg?ts=1415354801372','new':false},
+	{'id':5,'name':'Tricou ','brand':brands[3], 'material': 'silk' ,'price': 336.99, 'purchased':754, 'likes':654, 'pins':125 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/5646/901/807/2/w/560/5646901807_2_1_1.jpg?ts=1415986197063','new':false},
+	{'id':6,'name':'Bluza','brand':brands[2], 'material': 'cotton' ,'price': 136.99, 'purchased':643, 'likes':426, 'pins':321 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/4043/269/802/2/w/560/4043269802_2_1_1.jpg?ts=1413534241511','new':false},
+	{'id':7,'name':'Rochie','brand':brands[2], 'material': 'silk' ,'price': 836.99, 'purchased':75, 'likes':484, 'pins':643 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/8159/862/800/2/w/560/8159862800_2_2_1.jpg?ts=1412359897726','new':false},
+	{'id':8,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':true},
+	{'id':9,'name':'Tricou ','brand':brands[3], 'material': 'silk' ,'price': 336.99, 'purchased':754, 'likes':654, 'pins':125 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/5646/901/807/2/w/560/5646901807_2_1_1.jpg?ts=1415986197063'}
 ];
 
 var people = [
@@ -76,19 +76,19 @@ var people = [
 var actions=[
 	{name:'Pin',message:'<i class="fa fa-thumb-tack"></i> pinned</span> this product.'},
 	{name:'Like',message:'<i class="fa fa-thumbs-o-up"></i> liked</span> this product.'},
-	{name:'Purchase',message:'<img src="img/shopping-bag.png" alt="" style="border-radius:0"> purchased</span> this product.'}
+	{name:'Purchase',message:'<img src="img/shopping-bag.png" alt="" style="border-radius:0" width="15"> purchased</span> this product.'}
 ];
 
 var notifications = [
 	{person: people[0], action: actions[0], product: products[0]},
-	{person: people[1], action: actions[1], product: products[1]},
-	{person: people[2], action: actions[2], product: products[2]},
+	{person: people[1], action: actions[1], product: products[2]},
+	{person: people[2], action: actions[2], product: products[1]},
 	{person: people[3], action: actions[1], product: products[3]},
 	{person: people[3], action: actions[2], product: products[4]},
 	{person: people[0], action: actions[2], product: products[5]},
 	{person: people[0], action: actions[1], product: products[6]},
-	{person: people[4], action: actions[0], product: products[7]},
-	{person: people[5], action: actions[1], product: products[8]}
+	{person: people[4], action: actions[0], product: products[8]},
+	{person: people[4], action: actions[1], product: products[7]}
 ];
 
 var me = people[0];

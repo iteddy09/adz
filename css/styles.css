@@ -172,7 +172,11 @@ button{
 
 
 
-#container #product img#big-image,#user img{
+#user img#avatar{ 
+	cursor: pointer;
+	border-radius: 10px;
+}
+#container #product img#big-image{
 	max-height: 500px;
 	cursor:zoom-in;
 	-webkit-cursor:zoom-in;

@@ -4,29 +4,39 @@ var containerScroll = $("#container #img-thumbnails");
 var imgContainer = $("#img-thumbnails");
 var lastId;
 
+function loadProduct(product,notificationId){
+	var productNew="", notificationHtml="";
+	if(product.new) productNew="class='unread'";
+	if(notificationId!=undefined) notificationHtml="notification-id='"+notificationId+"'";
+ 
+	var img= $("<img src='"+product.image+"' alt='"+product.name+"' product-id='"+product.id+"' "+productNew+" "+notificationHtml+" />")
+
+	img.appendTo('#img-thumbnails');
+}
+
 function loadProducts(){
 	for(var i =0;i< products.length;i++){
-		var product = products[i];
-		var productNew="";
-		if(product.new) productNew="class='unread'";
-		var img= $("<img src='"+product.image+"' alt='"+product.name+"' product-id='"+i+"' "+productNew+" />")
-
-		img.appendTo('#img-thumbnails');
+		loadProduct(products[i]);
 	}
 }
 
 function loadBrands(){
- 
-
 	brands.forEach(function(brand,key){
 		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
 		brand.appendTo("#allBrands")
 	});
 }
 
-function loadMyFavoriteBrands(){
- 
+function loadNotifications(){
+	$("#img-thumbnails").html('');
 
+
+	notifications.forEach(function(notification,key){
+		loadProduct(notification.product,key);
+	});
+}
+ 
+function loadMyFavoriteBrands(){
 	me.favorite_brands.forEach(function(brand,key){
 		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
 		brand.appendTo("#myFavoriteBrands")
@@ -48,7 +58,7 @@ function hideAllTabs(){
 
 function hideAllPages(){
 	$("#product").hide();
- 
+
 	$("#myAccountSettings").hide();
 
 }
