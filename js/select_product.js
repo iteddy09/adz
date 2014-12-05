@@ -11,6 +11,7 @@ var userNameEl=$("#user #userName");
 var userActionEl=$("#user #action");
 var userImgEl=$("#user img");
 var userLookEl=$("#user #look");
+var userLookingEl=$("#user #looking");
 
 
 function removeOtherSelected(){
@@ -30,9 +31,11 @@ function selectProduct(img){
 		userImgEl.attr('src',notification.person.avatar);
 		userActionEl.html(notification.action.message);
 		userLookEl.html(notification.person.look);
+		userLookingEl.html(notification.person.looking);
 	}
 	product.new = false;
 	img.removeClass('unread');
+	img.removeClass('fadeIn');
 	img.addClass('current');
 	productImg.attr('src',img.attr('src')) ;
 	zoomImg.css('background-image','url('+img.attr('src')+')') ;

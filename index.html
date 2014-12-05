@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/tipsy.css">
+	<link rel="stylesheet" href="css/animations.css">
 	
 
 </head>
@@ -63,7 +64,10 @@
 			<ul>
 				<li><i class="fa fa-search" id='searchButton' style='cursor:pointer;'></i> 
 					<div id='search-container' align='left'>
-						<div><input type="text" style='width:160px;margin-bottom:10px' placeholder='search product..'> </div> 
+						<input type="text" style='width:160px;' placeholder='search product..'> &nbsp; <i class="fa fa-caret-down"></i>
+						<div id='advancedSearch' style='display:none;margin-top:10px'>
+
+
 						   <label><input type="checkbox" name="option[]" value="1" checked />all products</label> <br>
 						   <label><input type="checkbox" name="option[]" value="1" />from favorites</label> <br>
 							<label><input type="checkbox" name="option[]" value="1" />products with discount</label> <br>
@@ -89,6 +93,8 @@
 
 					<div align="left" style='margin-top:10px'><b style='font-size:15px;cursor:pointer' id='doTheSearch'><i class="fa fa-search"></i>  SEARCH</b> <span id="hide" style='margin-left:60px;'>Hide</span>
 					</div>
+
+					</div> 
 				</div>
 
 			</li>
@@ -114,14 +120,15 @@
 		<div id="mid" style='overflow:hidden'>
 
 			<div id='left' style='float:left;width:240px;'>
-				<div id='user' style='display:block;margin-top:130px;'>
+				<div id='user' style='display:none;margin-top:130px;'>
 					<img id='avatar' src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/v/t1.0-1/c27.0.160.160/p160x160/1013277_452272794893818_1300799417_n.jpg?oh=6333349ecaf3af8cf881693c83114cd7&oe=551DAC29&__gda__=1425883984_1fce4720f51fecc4ca0d391ec9b0716c" alt="" width="90" height="90"> <br>
 
 					<b id='userName'>Alexandru Stefan</b> <br> 
 					<span id="action"><i class="fa fa-thumb-tack"></i> pinned this product. </span><br>
-					Look: <span id="look">3285</span>
+					Look: <span id="look">3285</span> <br>
+					Looking: <span id="looking">3285</span>
 				</div>	
-				<div id="product-details" style='display:none'>
+				<div id="product-details" style='display:block'>
 					<div id='colors' style='margin-bottom:50px;margin-top:130px'>
 						<span style='font-weight:400'>Colors</span> <br> 
 						<span class="color" style='background-color:#e74c3c'></span><span class="color" style='background-color:#333'></span><span class="color" style='background-color:#2ecc71'></span><span class="color" style='background-color:#fff;border:1px solid #ddd;width:14px;height:14px;'></span>
@@ -163,6 +170,7 @@
  
 
 	<div id='myAccountSettings' style='display:none' class='page' align='center'>
+		<div class="tab" id='styleTab'><i class="fa fa-camera"></i> Photos</div>
 		<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> Pins</div>
 		<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> Favorites</div>
 		<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> Purchases</div>
