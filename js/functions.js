@@ -5,6 +5,18 @@ var imgContainer = $("#img-thumbnails");
 var lastId;
 
 
+function loadListOfPeople(){
+	
+
+	for(var i =0;i< people.length;i++){
+		var person = people[i];
+
+		var toAdd = $("<div class='person' onClick='showProfile("+i+")'><img src='"+person.avatar+"' width='30' height='30' style='vertical-align:middle'> <span class='name'>"+person.name+"</span></div>")
+
+		toAdd.appendTo("#listOfPeople");
+	}
+}
+
 function loadProduct(product,notificationId){
 	var productNew="", notificationHtml="";
 	if(product.new) productNew="class='fadeIn unread'";
@@ -35,7 +47,7 @@ function loadNewProducts(){
 
 function loadBrands(){
 	brands.forEach(function(brand,key){
-		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
+		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-plus sign" action="plus"></i></div>');
 		brand.appendTo("#allBrands")
 	});
 }
@@ -50,9 +62,10 @@ function loadNotifications(){
 	});
 }
 
+
 function loadMyFavoriteBrands(){
 	me.favorite_brands.forEach(function(brand,key){
-		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'</div>');
+		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-minus sign" action="minus"></i></div>');
 		brand.appendTo("#myFavoriteBrands")
 	});
 }
@@ -92,6 +105,18 @@ function hideAllTabs(){
 
 }
 
+function buyProduct(){
+	console.log(currentProduct);
+
+	cart.push(currentProduct);
+
+	$("#shopping-cart #number").html(cart.length);
+
+	$("#shopping-cart").css('opacity',1);
+
+	setTimeout(function(){$("#shopping-cart").css('opacity',0)},1300)
+}
+
 function hideAllPages(){
 	console.log('pages hidden')
 	$("#product").hide();
@@ -102,3 +127,25 @@ function hideAllPages(){
 
 }
 
+function showAdvancedSearch(){
+	$("#advanced-search").attr('class','fa fa-caret-up');
+	isOpenAdvancedSearch=true;
+	$("#advancedSearch").show();
+}
+
+function hideAdvancedSearch(){
+	$("#advanced-search").attr('class','fa fa-caret-down');
+	isOpenAdvancedSearch=false;
+	$("#advancedSearch").hide();
+}
+
+function toggleAdvancedSearch(){
+	//$("#advanced-search").attr('class','fa fa-caret-down');
+	if(isOpenAdvancedSearch){
+		hideAdvancedSearch();
+	}else{
+		showAdvancedSearch();
+	}
+	
+	$("#search-container #searchInput").focus();
+}

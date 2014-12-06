@@ -23,6 +23,7 @@ function selectProduct(img){
 
 
 	var product = products[img.attr('product-id')];
+	currentProduct = product;
 	var notificationId = img.attr('notification-id');
 
 	if(notificationId!=undefined){
@@ -35,7 +36,7 @@ function selectProduct(img){
 	}
 	product.new = false;
 	img.removeClass('unread');
-	img.removeClass('fadeIn');
+ 
 	img.addClass('current');
 	productImg.attr('src',img.attr('src')) ;
 	zoomImg.css('background-image','url('+img.attr('src')+')') ;

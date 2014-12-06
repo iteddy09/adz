@@ -16,10 +16,11 @@ $(function(){
 		showFirstPage();
 
 
-		$('#img-thumbnails').stop().animate({ scrollTop: 0 },300);
-
+ 
 		$(this).find('.count').animate({'opacity':0},300);
 		//selectProduct($('#img-thumbnails img').first())
+
+		$('#img-thumbnails').stop().animate({ scrollTop: 0 },300);
 	});
 	
 	$("#nav-menu #people").click(function(){
@@ -27,6 +28,10 @@ $(function(){
 		
 		showPeoplePage();
 		$(this).find('.count').animate({'opacity':0},300);
+		$('#img-thumbnails').stop().animate({ scrollTop: 0 },300);
+
+		selectProduct($("#img-thumbnails img").first());
+
 	});
 
 	$("#sizesTab").click(function(){
@@ -38,47 +43,47 @@ $(function(){
 		$("#my-favorites-content").show();
 	})
 
-	$("#styleTab").click(function(){
-		hideAllTabs();
-		$("#my-style-content").show();
-	})
 
 
 	$("#container #nav-menu ul > li:last-child").mouseenter(function(){ $("#moreList").css('opacity',1); })
 	$("#container #nav-menu ul > li:last-child").mouseleave(function(){ $("#moreList").css('opacity',0); })
 
 
-	$("#searchButton").click(function(){
-		$("#search-container").toggle();
+	$("#search-container").mouseenter(function(){
+
+		$("#search-container").css('opacity',1);
+
+
+		$("#search-container #searchInput").val('');
+		$("#search-container #searchInput").focus();
 		
-		$("#search-container #hide").unbind().click(function() {$("#search-container").hide()});
+
 	});
+	$("#search-container").mouseleave(function(){ $("#search-container").css('opacity',0); hideAdvancedSearch(); })
+
+
+	$("#advanced-search").click(toggleAdvancedSearch);
 
 
 	$("#product #mid #big-image").click(function(event) {
 
 
 		$("#container #product #zoom-container").css('opacity',1);
-		$("#container #product #left #product-details").show();
-		$("#container #product #left #product-details").css('opacity',1);
+		$("#container #product #right #product-details").show();
+		$("#container #product #right #product-details").css('opacity',1);
 
-		if(!notificationsPage) {
-			$("#user").css('margin-top','130px');
-			$("#product-details #colors").css('margin-top','130px');
-		}else{
-			$("#user").css('margin-top','50px');
-			$("#product-details #colors").css('margin-top','50px');
-		}
+
 
 	});
-	$("#product #mid").mouseleave(function(event) {
+
+	function hideDetails(event) {
 		$("#container #product #zoom-container").css('opacity',0)
-		$("#container #product #left #product-details").css('opacity',0);
-		//$("#container #product #left #product-details").hide();
+		$("#container #product #right #product-details").css('opacity',0);
+		//$("#container #product #right #product-details").hide();
 
-		$("#user").css('margin-top','130px');
-		$("#product-details #colors").css('margin-top','130px');
-	});
+	}
+	$("#product #left").hover(hideDetails)
+	$("#product").mouseleave(hideDetails);
 
 
 	$("#shopping-cart").mouseenter(function(event) {
@@ -119,7 +124,7 @@ $(function(){
 	})
 
 
-/*
+
 	$("#container #img-thumbnails").scroll(function(){
    // Get container scroll position
    var fromTop = $(this).scrollTop();
@@ -132,36 +137,46 @@ $(function(){
 
    var curId=cur[cur.length-1];
 
-  	// console.log($(curId));
-  	if($(curId).context){
-  		selectProduct($(curId));
-  	}
+   if($(curId).context){
+   	selectProduct($(curId));
+   }
 
-  });
+});
 
 	$("body").on(mousewheelevt,function(event) {
 		var before = containerScroll.scrollTop();
-		containerScroll.scrollTop(before-event.originalEvent.wheelDelta);
+		var toModify = event.originalEvent.wheelDelta/8;
+
+		console.log(toModify,event.originalEvent.wheelDelta)
+
+		containerScroll.scrollTop(before-toModify);
 	});
 
-*/
 
+	$("#listOfPeopleBg").click(function(){
+		$(this).hide();
+		$("#listOfPeople").hide();
+	});
 
-$("#listOfPeopleBg").click(function(){
-	$(this).hide();
-	$("#listOfPeople").hide();
-});
+	$("#container #img-thumbnails,#search-container,#listOfPeople,#listOfPeopleBg,#my-sizes-content").on(mousewheelevt,function(e){
+		e.stopPropagation();
+	});
 
-$("#container #img-thumbnails,#listOfPeople,#listOfPeopleBg,#my-sizes-content").on(mousewheelevt,function(e){
-	e.stopPropagation();
-});
+	$("#bottom #likes,#bottom #pins, #bottom #purchased, #bottom .count").click(function(){
 
-$("#bottom #likes,#bottom #pins, #bottom #purchased, #bottom .count").click(function(){
+		$("#listOfPeople").show();
+		$("#listOfPeopleBg").show();
 
-	$("#listOfPeople").show();
-	$("#listOfPeopleBg").show();
+	})
 
-})
-
-
+	$(".sign[action='plus']").live('click',function(){ 
+		$(this).attr('class','fa fa-minus sign');
+		$(this).attr('action','minus');
+		$(this).parent().appendTo("#myFavoriteBrands");
+	});
+	$(".sign[action='minus']").live('click',function(){ 
+		$(this).parent().appendTo("#allBrands");
+		$(this).attr('class','fa fa-plus sign');
+		$(this).attr('action','plus');
+	});
 })

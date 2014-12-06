@@ -7,5 +7,5 @@ $("#bottom #likes").tipsy({gravity: 's',title: getLongList,html:true,fade:true})
 $("#bottom #pins").tipsy({gravity: 's',title: getLongList,html:true,fade:true});
 $("#bottom #purchased").tipsy({gravity: 's',title: getLongList,html:true,fade:true});
 
-$("#nav-menu li").tipsy({gravity: 'n',fade:true,html:true});
+$("#nav-menu li").tipsy({gravity: 'w',fade:true,html:true});
 $("#shoppingBagIcon").tipsy({gravity: 'w',fade:true,html:false});
