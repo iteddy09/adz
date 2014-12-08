@@ -50,7 +50,7 @@
 		</div>
 
 		<div id='listOfPeople' style='display:none'>
-		 
+
 		</div>
 		<div id='listOfPeopleBg' style='display:none'></div>
 
@@ -61,20 +61,27 @@
 
 				</li>
 				<li title='Recent News' id='recentNews'><i class="fa fa-globe" style='position:relative;left:10px'></i> <div class='count'>3</div></li>
-				<li title='People <br/>Interaction' id='people'><i class="fa fa-users" style='position:relative;left:11px;top:-1px'></i> <div class='count'>5</div></li>
+				<li title='People <br/>Interaction' id='people'><i class="fa fa-users" style='position:relative;left:11px;top:-1px'></i> <div class='count' style='opacity:0'>4</div></li>
 				<li title='My profile' id='myAccount'><i class="fa fa-user"></i> 
 
-				<div id='moreList'>
+					<div id='moreList'>
 						<a href="#logout">Logout</a>
 					</div>
 
 				</li>
-				 
+
 
 			</ul>
 		</nav>
+		
+		<div id='topNavigation' align='center' style='float:left;display:none;width:819px;margin-bottom:15px; margin-top:10px'>
+			<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> My pins (3)</div>
+			<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> My brands</div>
+			<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> My purchases (3)</div>
+			<div class="tab" id='sizesTab'><i class="fa fa-child"></i> My sizes</div>
+		</div>
 
-		<div id='product' style='float:left;display:block'>
+		<div id='product' class='clear' style='float:left;display:block'>
 			<div id='top'>
 				<div id='brand'></div>  
 				<div id='price'></div> 
@@ -94,7 +101,7 @@
 					
 				</div>
 
-				<img id='big-image' src="#" alt="" style='float:left' width='350' height='470'> 
+				<img id='big-image' src="#" alt="" style='float:left' width='350' height='440'> 
 				<div id="right" style='float:left;width:220px;'>
 					<div id="zoom-container" >
 
@@ -129,17 +136,22 @@
 				</div>
 
 			</div>
+
+			<div id="cartDetails" style='width:350px;margin:0 auto;margin-top:15px;display:none'>
+				<span>Remove Product</span> <br>
+				<span style="float:left">Total</span>
+			 
+				<span style="float:right" id='totalText'>2389$</span>
+			</div>
+
 		</div>
 
 
 
 		<div id='myAccountSettings' style='display:none' class='page' align='center'>
-			<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> Pins (23)</div>
-			<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> Favorites</div>
-			<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> Purchases</div>
-			<div class="tab" id='sizesTab'><i class="fa fa-child"></i> Sizes</div>
+			
 
-			<div class="tab-content" id='my-sizes-content' style='display:block;overflow-y:scroll;height:500px'>
+			<div class="tab-content" id='my-sizes-content' style='display:block;overflow-y:scroll;height:570px'>
 				<img src="img/sizes.jpg" height="519" width="209" alt="" style='float:left;margin-left:178px'>
 				<div style='float:left;width:300px;' align='right'>
 					<div>Name <label for="00">0</label> <input type="text" size='3' id="00"></div>
@@ -161,7 +173,7 @@
 
 
 				</div>
-
+ 				<div style="clear:both"></div>
 				<div id="moreDetails">
 					<div class="sizeInfo">
 						<img src="img/sizes_vid_thumbnails/1.jpg" alt="sizes img">

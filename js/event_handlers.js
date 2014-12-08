@@ -6,13 +6,19 @@ $(function(){
 		loadBrands();
 		loadMyFavoriteBrands();
 
+
+ 		showTopNavigation();
+
 		$("#myAccountSettings").show();
+
+		$("#pinsTab").click();
+
 	})
 
 
 	$("#nav-menu #recentNews").click(function(){
 
-		loadNewProducts();
+		loadNewProducts(3);
 		showFirstPage();
 
 
@@ -24,13 +30,17 @@ $(function(){
 	});
 	
 	$("#nav-menu #people").click(function(){
+
 		loadNotifications();
-		
-		showPeoplePage();
-		$(this).find('.count').animate({'opacity':0},300);
-		$('#img-thumbnails').stop().animate({ scrollTop: 0 },300);
 
 		selectProduct($("#img-thumbnails img").first());
+		loadNewProducts(4);
+		
+		showPeoplePage();
+
+		$('#img-thumbnails').stop().animate({ scrollTop: 0 },300);
+		$(this).find('.count').animate({'opacity':1},300);
+
 
 	});
 
@@ -43,6 +53,24 @@ $(function(){
 		$("#my-favorites-content").show();
 	})
 
+	$("#purchasesTab").click(function(){
+		hideAllTabs();
+ 		clearNewProducts();
+ 		loadMyPurchases();
+		$("#product").removeClass('clear');
+		$("#product").show();
+		selectProduct($("#img-thumbnails img").first());
+	})
+
+	$("#pinsTab").click(function(){
+		hideAllTabs();
+		clearNewProducts();
+		loadMyPins();
+		$("#product").removeClass('clear');
+
+		$("#product").show();
+		selectProduct($("#img-thumbnails img").first());
+	})
 
 
 	$("#container #nav-menu ul > li:last-child").mouseenter(function(){ $("#moreList").css('opacity',1); })
@@ -93,6 +121,18 @@ $(function(){
 	$("#shopping-cart").mouseleave(function(event) {
 
 		$(this).css('opacity',0)
+	});
+
+	$("#shopping-cart").click(function(e){
+		hideAllPages();
+
+		$("#product").addClass('clear');
+
+		loadCartProducts();
+
+		$("#product #bottom").hide();
+		$("#cartDetails").show();
+		$("#product").show();
 	});
 
 	$("#product img#big-image").mousemove(function(e){
@@ -179,4 +219,18 @@ $(function(){
 		$(this).attr('class','fa fa-plus sign');
 		$(this).attr('action','plus');
 	});
+
+	$(".color").live('click',function(){
+		$(".color").each(function(k,v){ v.className='color' });
+
+		$(this).addClass('selected');
+	})
+
+
+	$("#topNavigation .tab").click(function(){
+		$("#topNavigation .tab").each(function(k,v){ v.className='tab' });
+
+		$(this).addClass('selected');
+	});
+
 })

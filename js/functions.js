@@ -28,6 +28,9 @@ function loadProduct(product,notificationId){
 }
 
 function loadProducts(){
+	$("#product #cartDetails").hide();
+	$("#product #bottom").show();
+
 	$("#img-thumbnails").html(''); //remove all products
 
 	for(var i =0;i< products.length;i++){
@@ -35,25 +38,65 @@ function loadProducts(){
 	}
 }
 
-function loadNewProducts(){
+function loadCartProducts(){
+	$("#img-thumbnails").html(''); //remove all products
+
+	for(var i =0;i< cart.length;i++){
+		loadProduct(cart[i]);
+	}
+}
+
+function loadNewProducts(max){
 	//marks first 3 products as new
-	for(var i =0;i<3;i++)
+	for(var i =0;i<max;i++)
 		products[i].new = true;
+}
 
+function loadMyPurchases(){
+	$("#product #cartDetails").hide();
+	$("#product #bottom").show();
 
+	$("#user").hide();
+	$("#img-thumbnails").html(''); //remove all products
+
+	for(var i =0;i< me.purchased.length;i++){
+		loadProduct( me.purchased[i] );
+	}
 
 
 }
+function loadMyPins(){
+	$("#product #cartDetails").hide();
+	$("#product #bottom").show();
+	$("#user").hide();
+	$("#img-thumbnails").html(''); //remove all products
+
+	for(var i =0;i< me.pinned.length;i++){
+		loadProduct( me.pinned[i] );
+	}
+}
 
 function loadBrands(){
+	$("#allBrands").html('');
 	brands.forEach(function(brand,key){
 		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-plus sign" action="plus"></i></div>');
 		brand.appendTo("#allBrands")
 	});
 }
+function loadMyFavoriteBrands(){
+	$("#myFavoriteBrands").html('');
+
+	me.favorite_brands.forEach(function(brand,key){
+		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-minus sign" action="minus"></i></div>');
+		brand.appendTo("#myFavoriteBrands")
+	});
+}
 
 
 function loadNotifications(){
+
+	$("#product #cartDetails").hide();
+	$("#product #bottom").show();
 	$("#img-thumbnails").html('');
 
 
@@ -63,16 +106,11 @@ function loadNotifications(){
 }
 
 
-function loadMyFavoriteBrands(){
-	me.favorite_brands.forEach(function(brand,key){
-		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-minus sign" action="minus"></i></div>');
-		brand.appendTo("#myFavoriteBrands")
-	});
-}
 
 function showFirstPage(){
 	loadProducts();
 	hideAllPages();
+	hideTopNavigation();
 
 	$("#user").hide();
 	$("#product").show();
@@ -83,6 +121,7 @@ function showFirstPage(){
 function showPeoplePage(){
 
 	hideAllPages();
+	hideTopNavigation();
 	notificationsPage=true;
 
 	$("#user").show();
@@ -100,10 +139,12 @@ function hideAllTabs(){
 	$("#my-style-content").hide();
 	$("#my-sizes-content").hide();
 	$("#my-favorites-content").hide();
-
+	$("#product").hide();
+	$("#product").addClass('clear');
 	
 
 }
+
 
 function buyProduct(){
 	console.log(currentProduct);
@@ -122,6 +163,7 @@ function hideAllPages(){
 	$("#product").hide();
 
 	$("#myAccountSettings").hide();
+	$("#topNavigation").hide();
 
 	notificationsPage=false;
 
@@ -148,4 +190,20 @@ function toggleAdvancedSearch(){
 	}
 	
 	$("#search-container #searchInput").focus();
+}
+
+
+function clearNewProducts(){
+	products.forEach(function(product,key){
+		product.new = false;
+	});
+}
+
+function hideTopNavigation(){
+	$("#topNavigation").hide();
+	$("#product").addClass('clear');
+}
+function showTopNavigation(){
+	$("#topNavigation").show();
+	$("#product").removeClass('clear');
 }

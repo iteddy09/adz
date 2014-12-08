@@ -29,8 +29,12 @@ var products = [
 	{'id':8,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':false},
 	{'id':8,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':false},
 	{'id':8,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':false},
+	{'id':8,'name':'Rochie ','brand':brands[0], 'material': 'wool' ,'price': 535.99, 'purchased':65243, 'likes':428, 'pins':325 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/1434/243/600/2/w/560/1434243600_2_1_1.jpg?ts=1415365043961','new':false},
 	{'id':9,'name':'Tricou ','brand':brands[3], 'material': 'silk' ,'price': 336.99, 'purchased':754, 'likes':654, 'pins':125 , 'image':'http://static.zara.net/photos//2014/I/0/1/p/5646/901/807/2/w/560/5646901807_2_1_1.jpg?ts=1415986197063'}
 ];
+
+
+
 
 var people = [
 	{
@@ -39,9 +43,10 @@ var people = [
 		look:389,
 		looking:213,
 		favorite_brands: [brands[2],brands[3],brands[5]],
-		purchased: [product[0],product[1],product[2]],
-		pinned:[product[2],product[3],product[4]],
-		liked:[product[2],product[4],product[7]]
+		purchased: [products[0],products[1],products[2]],
+		pinned:[products[2],products[3],products[4]],
+		liked:[products[2],products[4],products[7]],
+		 
 	},
 	{
 		name:'Cosmin Mihale',
@@ -49,9 +54,10 @@ var people = [
 		look:643,
 		looking:125,
 		favorite_brands: [brands[5],brands[1],brands[7]],
-		purchased: [product[0],product[1],product[2]],
-		pinned:[product[2],product[3],product[4]],
-		liked:[product[2],product[4],product[7]]
+		purchased: [products[0],products[1],products[2]],
+		pinned:[products[2],products[3],products[4]],
+		liked:[products[2],products[4],products[7]],
+ 
 	},
 	{
 		name:'Nitu Mihai',
@@ -59,9 +65,9 @@ var people = [
 		look:125,
 		looking:12,
 		favorite_brands: [brands[0],brands[7],brands[2]],
-		purchased: [product[0],product[1],product[2]],
-		pinned:[product[2],product[3],product[4]],
-		liked:[product[2],product[4],product[7]]
+		purchased: [products[0],products[1],products[2]],
+		pinned:[products[2],products[3],products[4]],
+		liked:[products[2],products[4],products[7]]
 	},
 	{
 		name:'Maria Nicola',
@@ -69,9 +75,9 @@ var people = [
 		look:236,
 		looking:52,
 		favorite_brands: [brands[2],brands[6],brands[5]],
-		purchased: [product[0],product[1],product[2]],
-		pinned:[product[2],product[3],product[4]],
-		liked:[product[2],product[4],product[7]]
+		purchased: [products[0],products[1],products[2]],
+		pinned:[products[2],products[3],products[4]],
+		liked:[products[2],products[4],products[7]]
 	},
 	{
 		name:'Sorin Frasineanu ',
@@ -79,9 +85,9 @@ var people = [
 		look:301,
 		looking:13,
 		favorite_brands: [brands[0],brands[8],brands[2]],
-		purchased: [product[0],product[1],product[2]],
-		pinned:[product[2],product[3],product[4]],
-		liked:[product[2],product[4],product[7]]
+		purchased: [products[0],products[1],products[2]],
+		pinned:[products[2],products[3],products[4]],
+		liked:[products[2],products[4],products[7]]
 	}
 ];
 
@@ -104,6 +110,7 @@ var notifications = [
 	{person: people[2], action: actions[1], product: products[7]},
 	{person: people[0], action: actions[2], product: products[0]},
 	{person: people[3], action: actions[0], product: products[1]},
+	{person: people[3], action: actions[1], product: products[6]},
 	{person: people[4], action: actions[1], product: products[3]},
 	{person: people[3], action: actions[2], product: products[5]}
 ];
