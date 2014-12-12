@@ -4,11 +4,12 @@ $(function(){
 		hideAllPages();
 
 		loadBrands();
-		loadMyFavoriteBrands();
+		loadFavoriteBrands(me);
 
 
- 		showTopNavigation();
-
+		showTopNavigation();
+		$("#topNavigation #userProfile").hide();
+		$("#topNavigation #myProfile").show();
 		$("#myAccountSettings").show();
 
 		$("#pinsTab").click();
@@ -22,7 +23,7 @@ $(function(){
 		showFirstPage();
 
 
- 
+
 		$(this).find('.count').animate({'opacity':0},300);
 		//selectProduct($('#img-thumbnails img').first())
 
@@ -50,27 +51,74 @@ $(function(){
 	})
 	$("#favoritesTab").click(function(){
 		hideAllTabs();
+
+		//hide userFavoriteBrands
+
+		//show all brands
+		
+		//show myFavoriteBrands
+
 		$("#my-favorites-content").show();
-	})
+	});
+
+	$("#userFavoritesTab").click(function(){
+		hideAllTabs();
+
+		loadFavoriteBrands(showProfileUser,1);
+
+		//hide all brands show userFavoriteBrands
+
+		$("#user-favorites-content").show();
+	});
 
 	$("#purchasesTab").click(function(){
 		hideAllTabs();
- 		clearNewProducts();
- 		loadMyPurchases();
+		clearNewProducts();
+		loadPurchases(me);
 		$("#product").removeClass('clear');
 		$("#product").show();
 		selectProduct($("#img-thumbnails img").first());
-	})
+	});
+
+	$("#userPurchasesTab").click(function(){
+		hideAllTabs();
+		clearNewProducts();
+		loadPurchases(showProfileUser);
+		$("#product").removeClass('clear');
+		$("#product").show();
+		selectProduct($("#img-thumbnails img").first());
+	});
+
+	$("#userLikesTab").click(function(){
+		hideAllTabs();
+		clearNewProducts();
+		loadLikes(showProfileUser);
+		$("#product").removeClass('clear');
+		$("#product").show();
+		selectProduct($("#img-thumbnails img").first());
+	});
 
 	$("#pinsTab").click(function(){
 		hideAllTabs();
 		clearNewProducts();
-		loadMyPins();
+		loadPins(me);
 		$("#product").removeClass('clear');
 
 		$("#product").show();
 		selectProduct($("#img-thumbnails img").first());
-	})
+	});
+	$("#userPinsTab").click(function(){
+		hideAllTabs();
+		clearNewProducts();
+
+		loadPins(showProfileUser);
+
+		$("#product").removeClass('clear');
+
+		$("#product").show();
+		selectProduct($("#img-thumbnails img").first());
+	});
+
 
 
 	$("#container #nav-menu ul > li:last-child").mouseenter(function(){ $("#moreList").css('opacity',1); })
@@ -80,14 +128,19 @@ $(function(){
 	$("#search-container").mouseenter(function(){
 
 		$("#search-container").css('opacity',1);
+		$("#container #nav-menu ul> li:first-child").css('opacity',0);
 
 
-		$("#search-container #searchInput").val('');
+		//$("#search-container #searchInput").val('');
 		$("#search-container #searchInput").focus();
 		
 
 	});
-	$("#search-container").mouseleave(function(){ $("#search-container").css('opacity',0); hideAdvancedSearch(); })
+	$("#search-container").mouseleave(function(){ 
+		$("#search-container").css('opacity',0); 
+		hideAdvancedSearch(); 
+		$("#container #nav-menu ul> li:first-child").css('opacity',1);
+	})
 
 
 	$("#advanced-search").click(toggleAdvancedSearch);
@@ -124,15 +177,27 @@ $(function(){
 	});
 
 	$("#shopping-cart").click(function(e){
-		hideAllPages();
+		if(cart.length>0){
 
-		$("#product").addClass('clear');
+			hideAllPages();
 
-		loadCartProducts();
+			$("#user").hide();
 
-		$("#product #bottom").hide();
-		$("#cartDetails").show();
-		$("#product").show();
+			$("#product").addClass('clear');
+
+			clearNewProducts();
+
+
+
+			loadCartProducts();
+			selectProduct($("#img-thumbnails img").first());
+
+			updateTotalCartPrice();
+
+			$("#product #bottom").hide();
+			$("#cartDetails").show();
+			$("#product").show();
+		}
 	});
 
 	$("#product img#big-image").mousemove(function(e){
@@ -187,7 +252,7 @@ $(function(){
 		var before = containerScroll.scrollTop();
 		var toModify = event.originalEvent.wheelDelta/8;
 
-		console.log(toModify,event.originalEvent.wheelDelta)
+		// console.log(toModify,event.originalEvent.wheelDelta)
 
 		containerScroll.scrollTop(before-toModify);
 	});

@@ -52,43 +52,59 @@ function loadNewProducts(max){
 		products[i].new = true;
 }
 
-function loadMyPurchases(){
+function loadPurchases(user){
 	$("#product #cartDetails").hide();
 	$("#product #bottom").show();
 
 	$("#user").hide();
 	$("#img-thumbnails").html(''); //remove all products
 
-	for(var i =0;i< me.purchased.length;i++){
-		loadProduct( me.purchased[i] );
+	for(var i =0;i< user.purchased.length;i++){
+		loadProduct( user.purchased[i] );
 	}
 
 
 }
-function loadMyPins(){
+function loadPins(user){
 	$("#product #cartDetails").hide();
 	$("#product #bottom").show();
 	$("#user").hide();
 	$("#img-thumbnails").html(''); //remove all products
 
-	for(var i =0;i< me.pinned.length;i++){
-		loadProduct( me.pinned[i] );
+	for(var i =0;i< user.pinned.length;i++){
+		loadProduct( user.pinned[i] );
 	}
+}
+function loadLikes(user){
+	$("#product #cartDetails").hide();
+	$("#product #bottom").show();
+	$("#user").hide();
+	$("#img-thumbnails").html(''); //remove all products
+
+	for(var i =0;i< user.liked.length;i++){
+		loadProduct( user.liked[i] );
+	}
+}
+function loadFavoriteBrands(user,editable){
+	$("#myFavoriteBrands").html('');
+	$("#userFavoriteBrands").html('');
+
+	edit ='';
+	if(editable==undefined) edit='<i class="fa fa-minus sign" action="minus"></i>';
+
+	user.favorite_brands.forEach(function(brand,key){
+
+		var brand = $('<div class="brand" brand-id="'+key+'"><img src="img/brands/'+brand.imageName+'.png">'+edit+'</div>');
+		brand.appendTo("#myFavoriteBrands");
+		brand.appendTo("#userFavoriteBrands");
+	});
 }
 
 function loadBrands(){
 	$("#allBrands").html('');
 	brands.forEach(function(brand,key){
-		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-plus sign" action="plus"></i></div>');
+		var brand = $('<div class="brand" brand-id="'+key+'"><img src="img/brands/'+brand.imageName+'.png"><i class="fa fa-plus sign" action="plus"></i></div>');
 		brand.appendTo("#allBrands")
-	});
-}
-function loadMyFavoriteBrands(){
-	$("#myFavoriteBrands").html('');
-
-	me.favorite_brands.forEach(function(brand,key){
-		var brand = $('<div class="brand" brand-id="'+key+'">'+brand.name+'<i class="fa fa-minus sign" action="minus"></i></div>');
-		brand.appendTo("#myFavoriteBrands")
 	});
 }
 
@@ -139,6 +155,7 @@ function hideAllTabs(){
 	$("#my-style-content").hide();
 	$("#my-sizes-content").hide();
 	$("#my-favorites-content").hide();
+	$("#user-favorites-content").hide();
 	$("#product").hide();
 	$("#product").addClass('clear');
 	
@@ -206,4 +223,36 @@ function hideTopNavigation(){
 function showTopNavigation(){
 	$("#topNavigation").show();
 	$("#product").removeClass('clear');
+}
+
+function showUserProfile(userIndex){
+	hideAllPages();
+
+
+	showProfileUser = people[userIndex];
+	$(".userName").html(showProfileUser.name);
+	$("#userAvatar").attr('src',showProfileUser.avatar);
+
+	$("#userProfile #userPinsCount").html(showProfileUser.pinned.length);
+	$("#userProfile #userLikesCount").html(showProfileUser.liked.length);
+	$("#userProfile #userFavoritesCount").html(showProfileUser.favorite_brands.length);
+	$("#userProfile #userPurchasesCount").html(showProfileUser.purchased.length);
+
+	showTopNavigation();
+	$("#myProfile").hide();
+	$("#userProfile").show();
+	$("#myAccountSettings").show();
+
+	$("#userPinsTab").click();
+
+}
+
+function updateTotalCartPrice(){
+	var total = 0;
+
+ 	cart.forEach(function(product,key){
+		total+= product.price;
+	});
+
+	$("#cartDetails #totalText").html(total+'$');
 }

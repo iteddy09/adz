@@ -74,16 +74,26 @@
 			</ul>
 		</nav>
 		
-		<div id='topNavigation' align='center' style='float:left;display:none;width:819px;margin-bottom:15px; margin-top:10px'>
-			<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> My pins (3)</div>
-			<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> My brands</div>
-			<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> My purchases (3)</div>
-			<div class="tab" id='sizesTab'><i class="fa fa-child"></i> My sizes</div>
+		<div id='topNavigation' align='center' style='float:left;display:none;width:819px;margin-bottom:10px; margin-top:8px'>
+			<div id='myProfile' style='display:none'>
+				<div class="tab" id='pinsTab'><i class="fa fa-thumb-tack"></i> My pins (3)</div>
+				<div class="tab" id='favoritesTab'><i class="fa fa-star"></i> My brands (3)</div>
+				<div class="tab" id='purchasesTab'><i class="fa fa-tags"></i> My purchases (3)</div>
+				<div class="tab" id='sizesTab'><i class="fa fa-child"></i> My sizes</div>
+			</div>
+			<div id='userProfile' style='display:none' class='page' align='center'>
+				<div class="userTab"><img id='userAvatar' src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/v/t1.0-1/c27.0.160.160/p160x160/1013277_452272794893818_1300799417_n.jpg?oh=6333349ecaf3af8cf881693c83114cd7&amp;oe=551DAC29&amp;__gda__=1425883984_1fce4720f51fecc4ca0d391ec9b0716c" width="30" height="30" style="vertical-align:middle;border-radius:4px;margin-right:10px"><span class="userName"></span></div>
+
+				<div class="tab" id='userPinsTab'><i class="fa fa-thumb-tack"></i> Pins (<span id="userPinsCount">0</span>)</div>
+				<div class="tab" id='userFavoritesTab'><i class="fa fa-star"></i> Favorites (<span id="userFavoritesCount">0</span>)</div>
+				<div class="tab" id='userPurchasesTab'><i class="fa fa-tags"></i> Purchases (<span id="userPurchasesCount">0</span>) </div>
+				<div class="tab" id='userLikesTab'><i class="fa fa-thumbs-o-up"></i> Likes (<span id="userLikesCount">0</span>) </div>
+			</div>
 		</div>
 
 		<div id='product' class='clear' style='float:left;display:block'>
 			<div id='top'>
-				<div id='brand'></div>  
+				<div id='brand'><img src="#" /></div>  
 				<div id='price'></div> 
 			</div>
 
@@ -119,18 +129,18 @@
 			</div> 
 
 			<div id='bottom'>
-				<div class="item">
-					<i class="fa fa-thumbs-o-up"></i>
+				<div class="item" >
+					<i class="fa fa-thumbs-o-up"title='Like this product'></i>
 					<div class='count'>5</div> <br>
 					<span id='likes'></span>
 				</div>
-				<div class="item">
-					<i class="fa fa-thumb-tack rotate"></i> 
+				<div class="item" >
+					<i class="fa fa-thumb-tack rotate"title="Pin this product"></i> 
 					<div class='count'>4</div> <br>
 					<span id='pins'></span>
 				</div>
-				<div class="item" style='padding-top: 16px;' onClick='buyProduct()'>
-					<div id="shoppingBagIcon" style='display:inline-block' title='Buy Product'><img src="img/shopping-bag.png" alt="" style='border-radius:0' ></div> 
+				<div class="item" style='padding-top: 16px;' >
+					<div id="shoppingBagIcon" style='display:inline-block' title='Buy Product' onClick='buyProduct()'><img src="img/shopping-bag.png" alt="" style='border-radius:0' ></div> 
 					<div class='count'>4</div> <br>
 					<span id='purchased'></span>
 				</div>
@@ -140,7 +150,7 @@
 			<div id="cartDetails" style='width:350px;margin:0 auto;margin-top:15px;display:none'>
 				<span>Remove Product</span> <br>
 				<span style="float:left">Total</span>
-			 
+
 				<span style="float:right" id='totalText'>2389$</span>
 			</div>
 
@@ -173,7 +183,7 @@
 
 
 				</div>
- 				<div style="clear:both"></div>
+				<div style="clear:both"></div>
 				<div id="moreDetails">
 					<div class="sizeInfo">
 						<img src="img/sizes_vid_thumbnails/1.jpg" alt="sizes img">
@@ -332,7 +342,7 @@
 
 
 			<div class="tab-content" id='my-favorites-content' style='display:none'>
-				<div style='float:left;width:420px'>Brands
+				<div style='float:left;width:420px'><div class="brandsTitle">Brands</div>
 
 					<div id='allBrands' class='brands'>
 						<!-- <div class="brand">No Brand</div> -->
@@ -341,7 +351,7 @@
 				</div>
 
 
-				<div style='float:left;width:420px'>Favorite brands 
+				<div style='float:left;width:420px'><div class="brandsTitle">Favorite brands </div>
 
 					<div id='myFavoriteBrands' class='brands'>
 						<!-- <div class="brand">Berska</div> -->
@@ -350,14 +360,23 @@
 				</div>
 
 			</div>
+
+			<div class="tab-content" id='user-favorites-content' style='display:none'>
+			 
+
+
+				<div style='margin:0 auto;width:420px'><div class="brandsTitle"><span class="userName">Fanels</span>'s favorite brands </div>
+
+					<div id='userFavoriteBrands' class='brands'>
+						<!-- <div class="brand">Berska</div> -->
+
+					</div>
+				</div>
+
+			</div>
 		</div>
 
-		<div id='userProfile' style='display:none' class='page' align='center'>
-			<div class="tab"><i class="fa fa-thumb-tack"></i> Pins</div>
-			<div class="tab"><i class="fa fa-star"></i> Favorites</div>
-			<div class="tab"><i class="fa fa-tags"></i> Purchases</div>
-			<div class="tab"><i class="fa fa-thumbs-o-up"></i> Likes</div>
-		</div>
+
 
 
 

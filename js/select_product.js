@@ -4,7 +4,7 @@ var pinsEl = $("#product #pins");
 var likesEl = $("#product #likes");
 var priceEl = $("#product #price");
 var nameEl = $("#product #name");
-var brandEl = $("#product #brand");
+var brandEl = $("#product #brand img");
 var purchasedEl = $("#product #purchased");
 var materialEl = $("#product #material");
 var userNameEl=$("#user #userName");
@@ -30,6 +30,7 @@ function selectProduct(img){
 		var notification = notifications[notificationId];
 		userNameEl.html(notification.person.name);
 		userImgEl.attr('src',notification.person.avatar);
+		userImgEl.attr('onClick','showUserProfile('+notification.person.id+')');
 		userActionEl.html(notification.action.message);
 		userLookEl.html(notification.person.look);
 		userLookingEl.html(notification.person.looking);
@@ -46,7 +47,7 @@ function selectProduct(img){
 	pinsEl.html(product.pins);
 	nameEl.html(product.name);
 	likesEl.html(product.likes);
-	brandEl.html(product.brand.name);
+	brandEl.attr('src',"img/brands/"+product.brand.imageName+".png");
 	purchasedEl.html(product.purchased);
 	materialEl.html(product.material);
 }
